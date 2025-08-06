@@ -14,7 +14,7 @@ int main()
 
     char estado;
     char codigoCarta[50], nomeCidade[50];
-    long populacao;
+    unsigned long int populacao;
     int numeroPontosTuristicos;
     double area, pib;
 
@@ -36,7 +36,7 @@ int main()
 
     printf("População: ");
     readLine(populacaoStr, sizeof(populacaoStr));
-    sscanf(populacaoStr, "%ld", &populacao);
+    sscanf(populacaoStr, "%lu", &populacao);
 
     printf("Área: ");
     readLine(areaStr, sizeof(areaStr));
@@ -52,7 +52,7 @@ int main()
 
     char estado2;
     char codigoCarta2[50], nomeCidade2[50];
-    long populacao2;
+    unsigned long int populacao2;
     int numeroPontosTuristicos2;
     double area2, pib2;
 
@@ -72,7 +72,7 @@ int main()
 
     printf("População: ");
     readLine(populacaoStr2, sizeof(populacaoStr2));
-    sscanf(populacaoStr2, "%ld", &populacao2);
+    sscanf(populacaoStr2, "%lu", &populacao2);
 
     printf("Área: ");
     readLine(areaStr2, sizeof(areaStr2));
@@ -92,7 +92,7 @@ int main()
     printf("\nEstado: %c", estado);
     printf("\nCódigo da Carta: %s", codigoCarta);
     printf("\nNome da Cidade: %s", nomeCidade);
-    printf("\nPopulação: %ld", populacao);
+    printf("\nPopulação: %lu", populacao);
     printf("\nÁrea: %.2f km²", area);
     printf("\nPIB: %.2f bilhões de reais", pib);
     printf("\nNúmero de Pontos Turísticos: %d\n", numeroPontosTuristicos);
@@ -101,7 +101,7 @@ int main()
     printf("\nEstado: %c", estado2);
     printf("\nCódigo da Carta: %s", codigoCarta2);
     printf("\nNome da Cidade: %s", nomeCidade2);
-    printf("\nPopulação: %ld", populacao2);
+    printf("\nPopulação: %lu", populacao2);
     printf("\nÁrea: %.2f km²", area2);
     printf("\nPIB: %.2f bilhões de reais", pib2);
     printf("\nNúmero de Pontos Turísticos: %d\n", numeroPontosTuristicos2);
