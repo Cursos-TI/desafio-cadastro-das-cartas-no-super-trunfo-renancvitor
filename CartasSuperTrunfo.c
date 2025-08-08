@@ -151,6 +151,24 @@ void exibeCalculosCarta2()
     printf("\n");
 }
 
+double superPoderCarta()
+{
+    double inversoDensidade = 1.0 / densidadePopulacional;
+
+    double superPoder = (double)populacao + area + pib + numeroPontosTuristicos + pibPerCapta + inversoDensidade;
+
+    return superPoder;
+}
+
+double superPoderCarta2()
+{
+    double inversoDensidade2 = 1.0 / densidadePopulacional2;
+
+    double superPoder2 = (double)populacao2 + area2 + pib2 + numeroPontosTuristicos2 + pibPerCapta2 + inversoDensidade2;
+
+    return superPoder2;
+}
+
 void saidaDados()
 {
     printf("\nPrimeira carta:");
@@ -172,6 +190,14 @@ void saidaDados()
     printf("\nPIB: %.2lf bilhões de reais", pib2);
     printf("\nNúmero de Pontos Turísticos: %d\n", numeroPontosTuristicos2);
     exibeCalculosCarta2();
+
+    printf("\nPopulação: %s carta venceu (%d)\n", populacao > populacao2 ? "Primeira" : "Segunda", populacao > populacao2);
+    printf("Área: %s carta venceu (%d)\n", area > area2 ? "Primeira" : "Segunda", area > area2);
+    printf("PIB: %s carta venceu (%d)\n", pib > pib2 ? "Primeira" : "Segunda", pib > pib2 ? 1 : 0);
+    printf("Pontos Turísticos: %s carta venceu (%d)\n", numeroPontosTuristicos > numeroPontosTuristicos2 ? "Primeira" : "Segunda", numeroPontosTuristicos > numeroPontosTuristicos2);
+    printf("Densidade Populacional: %s carta venceu (%d)\n", densidadePopulacional < densidadePopulacional2 ? "Primeira" : "Segunda", densidadePopulacional < densidadePopulacional2); // quanto menor, melhor
+    printf("PIB per Capita: %s carta venceu (%d)\n", pibPerCapta > pibPerCapta2 ? "Primeira" : "Segunda", pibPerCapta > pibPerCapta2);
+    printf("Super Poder: %s carta venceu (%d)\n", superPoderCarta() > superPoderCarta2() ? "Primeira" : "Segunda", superPoderCarta() > superPoderCarta2());
 }
 
 int main()
@@ -179,6 +205,8 @@ int main()
     printf("\n***Super Trunfo - Desafio aventureiro***\n");
 
     entradaDados();
+    superPoderCarta();
+    superPoderCarta2();
     saidaDados();
 
     return 0;
