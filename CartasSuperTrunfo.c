@@ -169,6 +169,91 @@ double superPoderCarta2()
     return superPoder2;
 }
 
+void compararAtributoEscolhido()
+{
+    int atributo;
+
+    densidadePopulacional = calcularDensidadePopulacional();
+    pibPerCapta = calcularPibPerCapta();
+    densidadePopulacional2 = calcularDensidadePopulacional2();
+    pibPerCapta2 = calcularPibPerCapta2();
+
+    printf("\n=== Escolha um atributo para comparar ===\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - PIB per capita\n");
+    printf("5 - Pontos turísticos\n");
+    printf("========================================\n");
+    printf("Digite o número do atributo: ");
+    scanf("%d", &atributo);
+
+    if (atributo == 1)
+    {
+        printf("\nComparação de cartas (Atributo: População):\n");
+
+        printf("\nPrimeira carta - São Paulo (SP): %lu", populacao);
+        printf("\nSegunda carta - Rio de Janeiro (RJ): %lu", populacao2);
+
+        if (populacao > populacao2)
+        {
+            printf("\nResultado: %s carta (%s) venceu!", populacao > populacao2 ? "Primeira" : "Segunda", populacao > populacao2 ? nomeCidade : nomeCidade2);
+        }
+    }
+    else if (atributo == 2)
+    {
+        printf("\nComparação de cartas (Atributo: Área):\n");
+
+        printf("\nPrimeira carta - São Paulo (SP): %lu", populacao);
+        printf("\nSegunda carta - Rio de Janeiro (RJ): %lu", populacao2);
+
+        if (area > area2)
+        {
+            printf("\nResultado: %s carta (%s) venceu!", area > area2 ? "Primeira" : "Segunda", area > area2 ? nomeCidade : nomeCidade2);
+        }
+    }
+    else if (atributo == 3)
+    {
+        printf("\nComparação de cartas (Atributo: PIB):\n");
+
+        printf("\nPrimeira carta - São Paulo (SP): %lu", populacao);
+        printf("\nSegunda carta - Rio de Janeiro (RJ): %lu", populacao2);
+
+        if (pib > pib2)
+        {
+            printf("\nResultado: %s carta (%s) venceu!", pib > pib2 ? "Primeira" : "Segunda", pib > pib2 ? nomeCidade : nomeCidade2);
+        }
+    }
+    else if (atributo == 4)
+    {
+        printf("\nComparação de cartas (Atributo: Densidade Populacional):\n");
+
+        printf("\nPrimeira carta - São Paulo (SP): %lu", populacao);
+        printf("\nSegunda carta - Rio de Janeiro (RJ): %lu", populacao2);
+
+        if (densidadePopulacional > densidadePopulacional2)
+        {
+            printf("\nResultado: %s carta (%s) venceu!", densidadePopulacional > densidadePopulacional2 ? "Primeira" : "Segunda", densidadePopulacional > densidadePopulacional2 ? nomeCidade : nomeCidade2);
+        }
+    }
+    else if (atributo == 5)
+    {
+        printf("\nComparação de cartas (Atributo: PIB per capita):\n");
+
+        printf("\nPrimeira carta - São Paulo (SP): %lu", populacao);
+        printf("\nSegunda carta - Rio de Janeiro (RJ): %lu", populacao2);
+
+        if (pibPerCapta > pibPerCapta2)
+        {
+            printf("\nResultado: %s carta (%s) venceu!", pibPerCapta > pibPerCapta2 ? "Primeira" : "Segunda", pibPerCapta > pibPerCapta2 ? nomeCidade : nomeCidade2);
+        }
+    }
+    else
+    {
+        printf("\nValor não reconhecido, encerrando...\n");
+    }
+}
+
 void saidaDados()
 {
     printf("\nPrimeira carta:");
@@ -207,9 +292,8 @@ int main()
     printf("\n***Super Trunfo - Desafio aventureiro***\n");
 
     entradaDados();
-    superPoderCarta();
-    superPoderCarta2();
     saidaDados();
+    compararAtributoEscolhido();
 
     return 0;
 }
